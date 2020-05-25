@@ -3,12 +3,12 @@ import React from 'react';
 import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 
-import UserList from './RepositoryList';
+import RepositoryList from './RepositoryList';
 
 const SEARCH_BY_USER = gql`
-query($login: String!, $cursor: String) {
+query($login: String!) {
   user(login: $login) {
-    topRepositories(first: 10, orderBy: {field: NAME, direction: DESC}, after: $cursor) {
+    repositories(first: 5) {
       edges {
         node {
           id
@@ -20,10 +20,6 @@ query($login: String!, $cursor: String) {
             }
           }
         }
-      }
-      pageInfo {
-        endCursor
-        hasNextPage
       }
     }
   }
@@ -41,7 +37,7 @@ const FetchReposActivity = ({login}) => {
       skip={login === ''}
       notifyOnNetworkStatusChange={true}
     >
-      {({data, loading, error, fetchMore}) => {
+      {({data, loading, error}) => {
 
         if (loading && !data) {
           return <div>loading</div>;
@@ -53,12 +49,10 @@ const FetchReposActivity = ({login}) => {
         }
 
         return (
-          <div className="row">
-            <UserList
+          <div>
+            <RepositoryList
               loading={loading}
-              repositories={user.topRepositories}
-              fetchMore={fetchMore}
-              entry={'user'}
+              repositories={user.repositories}
             />
           </div>
 
