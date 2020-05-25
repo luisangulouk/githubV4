@@ -1,0 +1,14 @@
+@import '../stylesheets/colours';
+
+.heroHeader {
+  &Container {
+    /* stylelint-disable color-no-hex */
+    background-color: $gitThemeBackground;
+  }
+  &Title {
+    color: $gitThemeFontWhite;
+    font-size: 18px;
+    margin: 15px;
+  }
+}
+

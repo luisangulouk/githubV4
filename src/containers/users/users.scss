@@ -1,0 +1,48 @@
+@import '../../stylesheets/colours';
+
+.card {
+  &Wrapper {
+    background-color: $cardWrapperBg;
+    border: 1px solid $cardBorder;
+    border-radius: 4px;
+    margin: 5px 4px 10px;
+    padding: 10px;
+  }
+  &Img {
+    border: 1px solid $cardBorder;
+    border-radius: 3px;
+    width: 100%;
+  }
+  &DevName {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 96%;
+  }
+  &GithubLink {
+    color: $gitThemeBackground;
+    text-decoration: underline;
+  }
+  &Bio {
+    font-size: 14px;
+  }
+  &Repos {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  &GithubProfile {
+    margin: 0;
+    min-height: 100%;
+    padding: 12px 0;
+  }
+}
+
+.search {
+  &Container {
+    margin: 10px 0 0;
+  }
+}
+
