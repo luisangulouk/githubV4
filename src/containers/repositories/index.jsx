@@ -8,7 +8,7 @@ import RepositoryList from './RepositoryList';
 const SEARCH_BY_USER = gql`
 query($login: String!) {
   user(login: $login) {
-    repositories(first: 5) {
+    repositories(last: 5) {
       edges {
         node {
           id

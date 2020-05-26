@@ -1,3 +1,5 @@
+@import '../../stylesheets/colours';
+
 .repo {
   &Wrapper {
     margin: 10px 0 5px;
@@ -10,5 +12,22 @@
     list-style: none;
     margin: 5px 2px;
     padding: 0;
+  }
+  &Profile {
+    background-color: $repoBg;
+    border: 1px solid $cardBorder;
+    border-radius: 0 4px 4px;
+    margin: 3px 0px 12px;
+    padding: 5px;
+  }
+  &Name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &CreatedAt {
+    font-size: 12px;
+  }
+  &Language {
+    margin-right: 4px;
   }
 }
