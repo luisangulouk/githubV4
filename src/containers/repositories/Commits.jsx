@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 
 import CommitList from './CommitList';
+import Style from './repositories.scss';
 
 const SEARCH_COMMITS = gql`
 query ($login: String!, $repo: String!, $branch: String!) {
@@ -36,7 +37,7 @@ const FetchCommits = ({login, repo, branch}) => {
     <div>
       <button
         type="button"
-        className="btn btn-link"
+        className={`btn btn-link ${Style.branchNameLink}`}
         onClick={() => setShowCommits(true)}
       >{branch}</button>
       {showCommits && <Query

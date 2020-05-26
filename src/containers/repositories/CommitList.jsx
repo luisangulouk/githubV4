@@ -10,8 +10,8 @@ const CommitList = ({
       {history.edges.map(({node}) => {
         console.log(node);
         return (
-          <li key={node.oid} className={Style.branchProfile}>
-            <span className={Style.branchName}>{node.messageHeadline}</span>
+          <li key={node.oid} className={Style.branchCommitMessage}>
+            <span>{node.messageHeadline}</span>
           </li>
         );
       }
