@@ -1,3 +1,4 @@
+/* eslint-disable no-ternary */
 /* eslint-disable no-console */
 import React, {useState} from 'react';
 import gql from 'graphql-tag';
@@ -38,7 +39,7 @@ const FetchCommits = ({login, repo, branch}) => {
       <button
         type="button"
         className={`btn btn-link ${Style.branchNameLink}`}
-        onClick={() => setShowCommits(true)}
+        onClick={() => setShowCommits(!showCommits)}
       >{branch}</button>
       {showCommits && <Query
         query={SEARCH_COMMITS}

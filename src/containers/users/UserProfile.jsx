@@ -1,3 +1,4 @@
+/* eslint-disable no-ternary */
 /* eslint-disable no-console */
 import React, {useState} from 'react';
 import FetchReposActivity from '../repositories';
@@ -22,8 +23,8 @@ const UserProfile = ({name, login, avatarUrl, url, bio, repositories}) => {
             <button
               type="button"
               className="btn btn-secondary"
-              onClick={() => setActivity(true)}
-            >Show Activity</button>
+              onClick={() => setActivity(!activity)}
+            >{ activity ? 'Hide' : 'Show' } Activity</button>
           </div>
 
           {activity && <FetchReposActivity login={login}/>}
