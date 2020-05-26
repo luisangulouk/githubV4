@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
@@ -31,7 +30,6 @@ query($user: String!, $cursor: String) {
 `;
 
 const FetchUsers = ({user}) => {
-  console.log(user);
   return (
     <Query
       query={SEARCH_BY_USER}

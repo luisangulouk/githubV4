@@ -5,19 +5,24 @@ import {Query} from 'react-apollo';
 
 import RepositoryList from './RepositoryList';
 
-const SEARCH_BY_USER = gql`
+const SEARCH_BY_REPO = gql`
 query($login: String!) {
-  user(login: $login) {
-    repositories(last: 5) {
-      edges {
-        node {
-          id
-          name
-          createdAt
-          languages(last: 5) {
-            nodes {
-              name
-            }
+  search(query: $login, type: REPOSITORY, last: 10) {
+    nodes {
+      ... on Repository {
+        id
+        createdAt
+        name
+        languages(last: 5) {
+          nodes {
+            name
+          }
+        }
+        nameWithOwner
+        refs(last: 10, refPrefix: "refs/heads/") {
+          nodes {
+            id
+            name
           }
         }
       }
@@ -27,12 +32,13 @@ query($login: String!) {
 `;
 
 const FetchReposActivity = ({login}) => {
-  console.log(login);
+  const orgLogin = `org:${login}`;
+  console.log(orgLogin);
   return (
     <Query
-      query={SEARCH_BY_USER}
+      query={SEARCH_BY_REPO}
       variables={{
-        login
+        login: orgLogin
       }}
       skip={login === ''}
       notifyOnNetworkStatusChange={true}
@@ -42,8 +48,7 @@ const FetchReposActivity = ({login}) => {
         if (loading && !data) {
           return <div>loading</div>;
         }
-        console.log(data);
-        const {user} = data;
+        const {search} = data;
         if (error) {
           return <div>{error}</div>;
         }
@@ -52,7 +57,7 @@ const FetchReposActivity = ({login}) => {
           <div>
             <RepositoryList
               loading={loading}
-              repositories={user.repositories}
+              repositories={search}
             />
           </div>
 

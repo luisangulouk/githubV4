@@ -5,8 +5,15 @@
     margin: 10px 0 5px;
   }
   &Header {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
+  }
+  &Branches {
+    color: $fontFaded;
+    font-size: 13px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding: 0;
   }
   &List {
     list-style: none;
@@ -29,5 +36,15 @@
   }
   &Language {
     margin-right: 4px;
+  }
+}
+
+.branch {
+  &Profile {
+    padding: 0 5px;
+  }
+  &Name {
+    font-size: 13px;
+    font-weight: 600;
   }
 }
