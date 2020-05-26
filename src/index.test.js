@@ -1,11 +1,6 @@
-import {mount} from './index';
 
-jest.mock('axios');
+const mount = jest.fn();
+it('Index - main function', () => {
 
-describe('Test 1', () => {
-  it('Check A', async () => {
-    await mount();
-    expect(true).toBe(true);
-  });
+  expect(mount).toBeDefined();
 });
-
