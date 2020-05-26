@@ -15,7 +15,7 @@ const RepositoryList = ({repositories, login}) => {
           console.log(node);
           return (
             <li key={node.id} className={Style.repoProfile}>
-              <span className={Style.repoName}>{node.name}</span><br />
+              <div className={Style.repoName}>{node.name}</div>
               <span className={Style.repoCreatedAt}><Moment>{node.createdAt}</Moment></span><br />
               {node.languages.nodes && node.languages.nodes.map(lang => {
                 return <span key={lang.name} className={`badge badge-info ${Style.repoLanguage}`}>{lang.name}</span>;

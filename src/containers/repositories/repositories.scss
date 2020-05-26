@@ -30,6 +30,10 @@
   &Name {
     font-size: 16px;
     font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 96%;
   }
   &CreatedAt {
     font-size: 12px;
