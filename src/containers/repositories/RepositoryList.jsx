@@ -5,9 +5,7 @@ import Style from './repositories.scss';
 
 import Branches from './Branches';
 
-const RepositoryList = ({
-  repositories
-}) => {
+const RepositoryList = ({repositories, login}) => {
   console.log(repositories);
   return (
     <div className={Style.repoWrapper}>
@@ -23,7 +21,7 @@ const RepositoryList = ({
                 return <span key={lang.name} className={`badge badge-info ${Style.repoLanguage}`}>{lang.name}</span>;
               })}
               <h6 className={Style.repoBranches}>Branches:</h6>
-              <Branches refs={node.refs}/>
+              <Branches refs={node.refs} repo={node.name} login={login}/>
             </li>
           );
         }

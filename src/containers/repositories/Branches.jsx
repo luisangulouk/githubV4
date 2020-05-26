@@ -1,17 +1,16 @@
 /* eslint-disable no-console */
 import React from 'react';
 import Style from './repositories.scss';
+import FetchCommits from './Commits';
 
-const Branches = ({
-  refs
-}) => {
+const Branches = ({refs, login, repo}) => {
   return (
     <ul className={Style.repoList}>
       {refs.nodes.map((node) => {
         console.log(node);
         return (
           <li key={node.id} className={Style.branchProfile}>
-            <span className={Style.branchName}>{node.name}</span>
+            <FetchCommits login={login} repo={repo} branch={node.name}/>
           </li>
         );
       }
