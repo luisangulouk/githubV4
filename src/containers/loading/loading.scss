@@ -1,0 +1,16 @@
+.loading {
+  &Wrapper {
+    display: block;
+    text-align: center;
+  }
+  &Message {
+    font-size: 12px;
+    font-weight: 600;
+    &::before {
+      content: url('../../assets/clock.svg');
+      line-height: normal;
+      padding-right: 5px;
+      vertical-align: middle;
+    }
+  }
+}

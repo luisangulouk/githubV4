@@ -35,6 +35,20 @@ export default function (env, arg) {
           ]
         },
         {
+          test: /\.(png|jpg|svg|ico)$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 8000,
+                name: '[hash]-[name].[ext]',
+                publicPath: '/',
+                esModule: false
+              }
+            }
+          ]
+        },
+        {
           test: /\.scss?$/,
           use: [
             {
