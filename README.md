@@ -8,7 +8,7 @@ You have been recently hired as a senior developer on a startup that is trying t
 
 __*App refactor process*__
 
-App has been refactor in order to retreive data from github's Graphql API as requested
+App has been refactor in order to retrieve data from github's Graphql API as requested
 
 Your first ticket is as follows: 
 
@@ -35,7 +35,7 @@ __User Story__
 
 __User Story result__
 
-Search results render each element as a profile card with its avatar included
+Search results renders each element as a profile card with its avatar included
 
 __User Story__
 
