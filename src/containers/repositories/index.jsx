@@ -1,8 +1,8 @@
-/* eslint-disable no-console */
 import React from 'react';
 import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 
+import Loading from '../loading';
 import RepositoryList from './RepositoryList';
 
 const SEARCH_BY_REPO = gql`
@@ -33,7 +33,6 @@ query($login: String!) {
 
 const FetchReposActivity = ({login}) => {
   const orgLogin = `org:${login}`;
-  console.log(orgLogin);
   return (
     <Query
       query={SEARCH_BY_REPO}
@@ -46,7 +45,7 @@ const FetchReposActivity = ({login}) => {
       {({data, loading, error}) => {
 
         if (loading && !data) {
-          return <div>loading</div>;
+          return <Loading />;
         }
         const {search} = data;
         if (error) {

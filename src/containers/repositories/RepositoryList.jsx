@@ -12,7 +12,6 @@ const RepositoryList = ({repositories, login}) => {
       <h5 className={Style.repoHeader}>Latest Repositories created by this user</h5>
       <ul className={Style.repoList}>
         {repositories.nodes && repositories.nodes.map((node) => {
-          console.log(node);
           return (
             <li key={node.id} className={Style.repoProfile}>
               <div className={Style.repoName}>{node.name}</div>

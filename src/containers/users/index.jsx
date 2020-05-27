@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 
 import UserList from './UserList';
+import Loading from '../loading';
 
 const SEARCH_BY_USER = gql`
 query($user: String!, $cursor: String) {
@@ -11,6 +12,7 @@ query($user: String!, $cursor: String) {
       __typename
       ... on User {
         id
+        createdAt
         name
         login
         avatarUrl
@@ -42,7 +44,7 @@ const FetchUsers = ({user}) => {
       {({data, loading, error, fetchMore}) => {
 
         if (loading && !data) {
-          return <div>loading</div>;
+          return <Loading />;
         }
         const {search} = data;
         if (error) {

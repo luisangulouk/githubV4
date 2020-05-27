@@ -5,6 +5,7 @@ import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 
 import CommitList from './CommitList';
+import Loading from '../loading';
 import Style from './repositories.scss';
 
 const SEARCH_COMMITS = gql`
@@ -54,7 +55,7 @@ const FetchCommits = ({login, repo, branch}) => {
         {({data, loading, error}) => {
 
           if (loading && !data) {
-            return <div>loading</div>;
+            return <Loading />;
           }
           const {repository} = data;
           console.log(data);
