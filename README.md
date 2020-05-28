@@ -47,9 +47,36 @@ __User Story__
 
 __User Story result__
 
-Once the github user is identify as the subject it is presented with a button: "Show Activity" which request the last 10 repositories and display their names and available branches associated to them, so commits can be listed by branch selected
+Once the github user is identified as the subject, its profile is presented with a button: "Show Activity" which request the last 10 repositories and display their names and available branches associated to them, so commits can be listed by branch selected
 
 
+## How to install and run the test
+
+from the root folder run:
+
+`yarn`
+
+run the app in developemnt mode:
+
+`yarn start`
+
+## Github GraphQL V4
+
+Github graphQL requires authentication.
+
+Create the file: `.env` at root level and add the following:
+
+REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN=[YOUR-GITHUB-TOKEN]
+
+## Notes
+
+There is a lot of room for improvements:
+
+1.- Add Unit Testing for each component.
+
+2.- Modular CSS can be implemented using BEM, camel case was adopted just because the initial sample was created following that style.
+
+3.- Config Typescript on the project would help considerably the development experience specially for types
 
 
 
