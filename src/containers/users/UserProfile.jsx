@@ -21,15 +21,15 @@ const UserProfile = ({name, createdAt, login, avatarUrl, url, bio, repositories}
           </div>
           {bio && <p className={Style.cardBio}>{bio}</p>}
           <a href={url} className={Style.cardGithubLink}>{login}</a><br />
-          <span className={Style.cardRepos}>{repositories.totalCount}</span><br />
-          <div className={Style.cardActivity}>
+          <span className={Style.cardRepos} title="Repositories found">{repositories.totalCount}</span><br />
+          {repositories.totalCount > 0 && <div className={Style.cardActivity}>
             <button
               type="button"
               className="btn btn-secondary"
               onClick={() => setActivity(!activity)}
             >{ activity ? 'Hide' : 'Show' } Activity</button>
           </div>
-
+          }
           {activity && <FetchReposActivity login={login}/>}
         </div>
       </div>

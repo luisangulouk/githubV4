@@ -1,5 +1,4 @@
 /* eslint-disable no-ternary */
-/* eslint-disable no-console */
 import React, {useState} from 'react';
 import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
@@ -58,7 +57,6 @@ const FetchCommits = ({login, repo, branch}) => {
             return <Loading />;
           }
           const {repository} = data;
-          console.log(data);
           if (error) {
             return <div>{error}</div>;
           }
