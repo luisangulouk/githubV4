@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User List Component should match snapshot 1`] = `
+<div
+  className="container"
+>
+  <div>
+    <article
+      className="row cardWrapper"
+    >
+      <div
+        className="col-sm-3"
+      >
+        <div
+          className="cardGithubProfile"
+        >
+          <img
+            alt="Luis Miguel Angulo"
+            className="cardImg"
+            src="https://avatars2.githubusercontent.com/u/20256970?u=6420f0aa27a29caec0c6ca6aa13af64803923652&v=4"
+          />
+        </div>
+      </div>
+      <div
+        className="col-sm-9"
+      >
+        <div
+          className="cardGithubProfile"
+        >
+          <h5
+            className="cardDevName"
+          >
+            Luis Miguel Angulo
+          </h5>
+          <div
+            className="cardCreatedAt"
+          >
+            Github user since: 
+            <time
+              dateTime={"2016-07-02T14:23:00.000Z"}
+            >
+              2016
+            </time>
+          </div>
+          <p
+            className="cardBio"
+          >
+            Its been a while since vanilla was the only flavour...
+          </p>
+          <a
+            className="cardGithubLink"
+            href="https://github.com/luisangulouk"
+          >
+            luisangulouk
+          </a>
+          <br />
+          <span
+            className="cardRepos"
+            title="Repositories found"
+          >
+            25
+          </span>
+          <br />
+          <div
+            className="cardActivity"
+          >
+            <button
+              className="btn btn-secondary"
+              onClick={[Function]}
+              type="button"
+            >
+              Show
+               Activity
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div
+    className="FetchMore"
+  />
+</div>
+`;

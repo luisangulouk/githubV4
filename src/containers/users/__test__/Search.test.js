@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Search from './Search';
+import Search from '../Search';
 
 describe('Search Component', () => {
   const wrapper = renderer.create(<Search/>);
@@ -11,6 +11,13 @@ describe('Search Component', () => {
     expect(instance).toBeDefined();
     expect(instance.findAllByType('input').length).toEqual(1);
     expect(instance.findAllByType('button').length).toEqual(1);
+  });
+
+  it('should match snapshot', () => {
+
+    const component = renderer.create(<Search/>);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
 });
