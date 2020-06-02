@@ -1,10 +1,9 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-console */
 import React from 'react';
 
 import FetchMore from '../FetchMore';
 import UserProfile from './UserProfile';
+import Style from './users.scss';
 
 const getNewState = entry => (
   previousResult,
@@ -34,7 +33,7 @@ const UserList = ({
 }) => {
   return (
     <div className="container">
-
+      {profiles.nodes.length === 0 && <div className={Style.searchNotFound}>No matches found, try with a different name!</div>}
       {profiles.nodes.map(node => {
         return (
           <div key={node.id}>
