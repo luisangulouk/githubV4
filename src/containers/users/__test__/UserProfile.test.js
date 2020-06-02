@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 import UserProfile from '../UserProfile';
 
-describe('User List Component', () => {
+describe('User Profile Component', () => {
   const mockProfiles = {
     nodes: [{
       avatarUrl: 'https://avatars2.githubusercontent.com/u/20256970?u=6420f0aa27a29caec0c6ca6aa13af64803923652&v=4',

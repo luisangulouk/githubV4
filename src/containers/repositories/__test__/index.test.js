@@ -7,7 +7,7 @@ import gql from 'graphql-tag';
 import FetchReposActivity from '../index';
 import {waitFor} from '@testing-library/react';
 
-describe('Fetch Users Component', () => {
+describe('Fetch Repositories Activity Component', () => {
 
   const SEARCH_BY_REPO = gql`
   query($login: String!) {

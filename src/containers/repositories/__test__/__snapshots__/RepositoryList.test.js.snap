@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Repository List Component should match snapshot 1`] = `
+<div
+  className="repoWrapper"
+>
+  <h5
+    className="repoHeader"
+  >
+    Repositories found in this colletion are not Public
+  </h5>
+  <ul
+    className="repoList"
+  />
+</div>
+`;

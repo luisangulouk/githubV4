@@ -7,7 +7,7 @@ import gql from 'graphql-tag';
 import FetchCommits from '../Commits';
 import {waitFor} from '@testing-library/react';
 
-describe('Fetch Users Component', () => {
+describe('Commits Component', () => {
 
   const SEARCH_COMMITS = gql`
   query ($login: String!, $repo: String!, $branch: String!) {
@@ -79,7 +79,7 @@ describe('Fetch Users Component', () => {
     }
   ];
 
-  it('should render a button while wait for data', () => {
+  it('should render a button with a request of commits', () => {
 
     const wrapper = renderer.create(
       <MockedProvider mocks={mocks} addTypename={true}>

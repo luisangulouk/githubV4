@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Branches Component should match snapshot 1`] = `
+<ul
+  className="repoList"
+>
+  <li
+    className="branchProfile"
+  >
+    <div>
+      <button
+        className="btn btn-link branchNameLink"
+        onClick={[Function]}
+        type="button"
+      >
+        master
+      </button>
+    </div>
+  </li>
+</ul>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Commit List Component should match snapshot 1`] = `
+<ul
+  className="repoList"
+>
+  <li
+    className="branchCommitMessage"
+  >
+    <span>
+      [GHV4] refactor: Add handleClick function on commits, add test
+    </span>
+  </li>
+</ul>
+`;
