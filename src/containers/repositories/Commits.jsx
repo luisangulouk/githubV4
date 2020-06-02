@@ -34,12 +34,16 @@ query ($login: String!, $repo: String!, $branch: String!) {
 
 const FetchCommits = ({login, repo, branch}) => {
   const [showCommits, setShowCommits] = useState(false);
+  const handleClick = () => {
+    setShowCommits(!showCommits);
+  };
+
   return (
     <div>
       <button
         type="button"
         className={`btn btn-link ${Style.branchNameLink}`}
-        onClick={() => setShowCommits(!showCommits)}
+        onClick={handleClick}
       >{branch}</button>
       {showCommits && <Query
         query={SEARCH_COMMITS}
@@ -62,7 +66,7 @@ const FetchCommits = ({login, repo, branch}) => {
           }
 
           return (
-            <div>
+            <div className="commitList">
               <CommitList
                 history={repository.ref.target.history}
               />
