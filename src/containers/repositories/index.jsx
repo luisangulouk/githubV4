@@ -53,7 +53,7 @@ const FetchReposActivity = ({login}) => {
         }
 
         return (
-          <div>
+          <div className="repositoryList">
             <RepositoryList
               repositories={search}
               login={login}
