@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import TerserPlugin from 'terser-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -77,7 +78,7 @@ export default function (env, arg) {
             'sass-loader'
           ]
         }
-      ],
+      ]
     },
 
     plugins: [
@@ -165,5 +166,5 @@ export default function (env, arg) {
         })
       ]
     }
-  }
+  };
 }
